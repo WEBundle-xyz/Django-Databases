@@ -1,6 +1,10 @@
 from django.shortcuts import render
+from .models import Members
 
 def home(request):
-    return render(request, 'home.html', {})
+    all_members = Members.objects.all
+    return render(request, 'home.html', {'all': all_members})
+
+
 
 
